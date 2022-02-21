@@ -333,7 +333,7 @@ li :hover{
     min-height: 300px;
     font-size: 1.3rem;
 }
-/*admin.html */
+/*news.html */
 .news-content{
     display: flex;
     justify-content: center;
@@ -385,6 +385,9 @@ li :hover{
     align-items: center;
 }
 .fans-coment{
+    
+    text-decoration: none;
+    border:solid 4px black;
     width: 60%;
     display: flex;
     justify-content: center;
@@ -513,4 +516,8 @@ tr:nth-child(odd){
     .main-text{
         font-size: 3rem;
     }
+    .adding-description{
+        flex-direction: column;
+    }
+    
 }
