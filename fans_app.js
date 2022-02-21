@@ -1,29 +1,28 @@
 const commentInput = document.querySelector('.comment-input');
 const addCommentBtn = document.querySelector('.add-btn');
-const commentContent = document.querySelector('.fans-coment');
-const fansBlock = document.querySelector('.fans-content');
+const commentBlock = document.querySelector('.fans-coment');
+const commentsList = document.querySelector('.fans-content');
 const fanInfo = document.querySelector('.fans-info');
 
-let newCommentContent;
+let newCommentBlock;
 let newCommentText;
 let newFanInfo;
 
 addCommentBtn.addEventListener('click', () => {
     if (commentInput.value) {
-        newCommentContent = commentContent.cloneNode(true);
+        newCommentBlock = commentBlock.cloneNode(true);
         newFanInfo = fanInfo.cloneNode(true);
 
         newCommentText = document.createElement('p');
         newCommentText.innerHTML = commentInput.value;
 
-        console.log(newFanInfo);
         newFanInfo.replaceChild(getCurrentDate(), newFanInfo.firstElementChild);
         newFanInfo.replaceChild(getRandomName(), newFanInfo.lastElementChild);
 
-        newCommentContent.replaceChild(newCommentText, newCommentContent.firstElementChild);
-        newCommentContent.replaceChild(newFanInfo, newCommentContent.lastElementChild);
+        newCommentBlock.replaceChild(newCommentText, newCommentBlock.firstElementChild);
+        newCommentBlock.replaceChild(newFanInfo, newCommentBlock.lastElementChild);
 
-        fansBlock.appendChild(newCommentContent);
+        commentsList.appendChild(newCommentBlock);
         commentInput.value = '';
     } else {
         alert("Enter your comment pls!")
